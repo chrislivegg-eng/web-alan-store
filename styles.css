@@ -612,6 +612,11 @@ a {
   letter-spacing: 0.05em;
 }
 
+.is-disabled {
+  pointer-events: none;
+  opacity: 0.5;
+}
+
 .featured-offer__actions {
   display: grid;
   gap: 18px;

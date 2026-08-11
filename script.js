@@ -4,6 +4,7 @@ const revealItems = document.querySelectorAll(".reveal");
 const wholesaleForm = document.querySelector("#wholesale-form");
 const folioCode = document.querySelector("#folio-code");
 const folioSummary = document.querySelector("#folio-summary");
+const folioWhatsapp = document.querySelector("#folio-whatsapp");
 
 filters.forEach((filterButton) => {
   filterButton.addEventListener("click", () => {
@@ -41,7 +42,7 @@ revealItems.forEach((item) => {
   revealObserver.observe(item);
 });
 
-if (wholesaleForm && folioCode && folioSummary) {
+if (wholesaleForm && folioCode && folioSummary && folioWhatsapp) {
   wholesaleForm.addEventListener("submit", (event) => {
     event.preventDefault();
 
@@ -56,10 +57,22 @@ if (wholesaleForm && folioCode && folioSummary) {
     const dateToken = `${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, "0")}${String(now.getDate()).padStart(2, "0")}`;
     const randomToken = Math.floor(100 + Math.random() * 900);
     const folio = `MAY-${dateToken}-${randomToken}`;
+    const whatsappMessage =
+      `Hola, soy ${name || "un cliente mayorista"}.\n` +
+      `Folio: ${folio}\n` +
+      `Tipo de pedido: ${type || "No especificado"}\n` +
+      `Cantidad estimada: ${quantity || "0"}\n` +
+      `Telefono de contacto: ${phone || "No especificado"}\n` +
+      `${notes ? `Comentarios: ${notes}\n` : ""}` +
+      `Quiero informacion de mayoreo.`;
 
     folioCode.textContent = folio;
     folioSummary.textContent =
       `${name || "Prospecto"} solicito ${quantity || "0"} piezas de ${type || "producto"} ` +
       `con telefono ${phone || "sin telefono"}${notes ? `. Nota: ${notes}` : "."}`;
+
+    folioWhatsapp.href = `https://wa.me/528100000000?text=${encodeURIComponent(whatsappMessage)}`;
+    folioWhatsapp.classList.remove("is-disabled");
+    folioWhatsapp.setAttribute("aria-disabled", "false");
   });
 }
