@@ -234,6 +234,10 @@ a {
   animation: heroTitleIn 0.9s ease-out both;
 }
 
+.hero__keep-together {
+  white-space: nowrap;
+}
+
 .hero__text {
   max-width: 640px;
   margin: 18px 0 0;
