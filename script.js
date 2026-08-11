@@ -1,5 +1,6 @@
 const filters = document.querySelectorAll(".filter");
 const productCards = document.querySelectorAll(".product-card");
+const productCardToggles = document.querySelectorAll(".product-card__toggle");
 const revealItems = document.querySelectorAll(".reveal");
 const wholesaleForm = document.querySelector("#wholesale-form");
 const folioCode = document.querySelector("#folio-code");
@@ -20,6 +21,42 @@ filters.forEach((filterButton) => {
 
       card.classList.toggle("is-hidden", !matches);
     });
+  });
+});
+
+productCardToggles.forEach((toggleButton) => {
+  toggleButton.addEventListener("click", (event) => {
+    event.preventDefault();
+    event.stopPropagation();
+
+    const card = toggleButton.closest(".product-card");
+
+    if (!card) {
+      return;
+    }
+
+    const willOpen = !card.classList.contains("is-open");
+
+    productCards.forEach((otherCard) => {
+      if (otherCard !== card) {
+        otherCard.classList.remove("is-open");
+      }
+    });
+
+    card.classList.toggle("is-open", willOpen);
+  });
+});
+
+productCards.forEach((card) => {
+  card.addEventListener("keydown", (event) => {
+    if (event.key === "Enter" || event.key === " ") {
+      if (event.target.closest("a, button")) {
+        return;
+      }
+
+      event.preventDefault();
+      card.classList.toggle("is-open");
+    }
   });
 });
 
