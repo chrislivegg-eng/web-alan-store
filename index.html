@@ -36,6 +36,7 @@
         <nav class="nav">
           <a href="#categorias">Categorias</a>
           <a href="#catalogo">Catalogo</a>
+          <a href="#mayoristas">Mayoristas</a>
           <a href="#testimonios">Testimonios</a>
           <a href="#contacto">Contacto</a>
         </nav>
@@ -77,7 +78,7 @@
 
           <div class="hero__visual reveal">
             <article class="showcase-card floating-card">
-              <img src="./assets/fundas.jpeg" alt="Promocion de fundas de diseno" />
+              <img src="./assets/fundas-diseno.jpeg" alt="Promocion de fundas de diseno" />
               <div class="showcase-card__content">
                 <span class="tag">Top ventas</span>
                 <h2>Fundas con estilo</h2>
@@ -89,7 +90,7 @@
               class="showcase-card showcase-card--offset floating-card floating-card--delayed"
             >
               <img
-                src="./assets/reparacion.jpeg"
+                src="./assets/compra-venta.jpeg"
                 alt="Promocion de reparacion y compra de celulares"
               />
               <div class="showcase-card__content">
@@ -127,7 +128,7 @@
           <div class="category-grid">
             <article class="category-card category-card--feature reveal">
               <div class="category-card__media">
-                <img src="./assets/fundas.jpeg" alt="Categoria de fundas" />
+                <img src="./assets/fundas-precio.jpeg" alt="Categoria de fundas" />
               </div>
               <div class="category-card__content">
                 <span class="tag">Accesorios</span>
@@ -163,6 +164,33 @@
           </div>
         </section>
 
+        <section class="visual-strip">
+          <article class="visual-card reveal">
+            <img src="./assets/servicios-accesorios.jpeg" alt="Servicios y accesorios del negocio" />
+            <div class="visual-card__content">
+              <span class="tag">Lo que hacemos</span>
+              <h3>Reparaciones y accesorios</h3>
+              <p>Pantallas, baterias, hidrogel, mica ceramica y recubrimientos.</p>
+            </div>
+          </article>
+          <article class="visual-card reveal">
+            <img src="./assets/envios-domicilio.jpeg" alt="Envios a domicilio" />
+            <div class="visual-card__content">
+              <span class="tag">Entrega</span>
+              <h3>Envios a domicilio</h3>
+              <p>Entrega rapida, cobertura amplia y seguimiento por WhatsApp.</p>
+            </div>
+          </article>
+          <article class="visual-card reveal">
+            <img src="./assets/reparacion-brand.jpeg" alt="Imagen de marca de reparacion" />
+            <div class="visual-card__content">
+              <span class="tag">Marca</span>
+              <h3>Wero Repara</h3>
+              <p>Imagen fuerte para venta, reparacion, compra y proteccion.</p>
+            </div>
+          </article>
+        </section>
+
         <section class="featured-offer reveal">
           <div class="featured-offer__copy">
             <p class="eyebrow">Oferta destacada</p>
@@ -186,6 +214,91 @@
             >
               Pedir promo
             </a>
+          </div>
+        </section>
+
+        <section class="wholesale" id="mayoristas">
+          <div class="section-heading reveal">
+            <div>
+              <p class="eyebrow">Apartado mayorista</p>
+              <h2>Cotiza por lote y genera tu folio</h2>
+            </div>
+          </div>
+
+          <div class="wholesale__layout">
+            <article class="wholesale__info reveal">
+              <img src="./assets/fundas-diseno-2.jpeg" alt="Fundas para mayoreo" />
+              <div class="wholesale__copy">
+                <span class="tag">Mayoreo</span>
+                <h3>Precios especiales para revendedores</h3>
+                <p>
+                  Este apartado puede servir para que el cliente capture sus
+                  datos, la cantidad que busca y reciba un folio inmediato para
+                  seguimiento por WhatsApp o por llamada.
+                </p>
+                <ul class="wholesale__list">
+                  <li>Fundas, micas y accesorios por volumen</li>
+                  <li>Seguimiento con folio automatico</li>
+                  <li>Base lista para futuro CRM o Google Sheets</li>
+                </ul>
+              </div>
+            </article>
+
+            <article class="wholesale-form-card reveal">
+              <form class="wholesale-form" id="wholesale-form">
+                <label>
+                  Nombre o negocio
+                  <input type="text" name="name" placeholder="Ej. Accesorios MTY" required />
+                </label>
+                <label>
+                  WhatsApp
+                  <input type="tel" name="phone" placeholder="81 0000 0000" required />
+                </label>
+                <label>
+                  Tipo de pedido
+                  <select name="type" required>
+                    <option value="">Selecciona una opcion</option>
+                    <option value="Fundas">Fundas</option>
+                    <option value="Micas">Micas</option>
+                    <option value="Accesorios">Accesorios</option>
+                    <option value="Mixto">Pedido mixto</option>
+                  </select>
+                </label>
+                <label>
+                  Cantidad estimada
+                  <input type="number" name="quantity" min="10" placeholder="Ej. 50" required />
+                </label>
+                <label>
+                  Comentarios
+                  <textarea
+                    name="notes"
+                    rows="4"
+                    placeholder="Modelos, colores o necesidades especiales"
+                  ></textarea>
+                </label>
+
+                <div class="wholesale-form__actions">
+                  <button class="button" type="submit">Generar folio</button>
+                  <a
+                    class="button button--secondary"
+                    href="https://wa.me/528100000000?text=Hola%2C%20quiero%20informacion%20de%20mayoreo"
+                    target="_blank"
+                    rel="noreferrer"
+                  >
+                    Contactar mayoreo
+                  </a>
+                </div>
+              </form>
+
+              <div class="folio-result" id="folio-result" aria-live="polite">
+                <span class="folio-result__label">Folio automatico</span>
+                <strong id="folio-code">Aun no generado</strong>
+                <p id="folio-summary">
+                  Llena el formulario y la pagina te genera un folio local para
+                  dar seguimiento al prospecto mayorista.
+                </p>
+              </div>
+            </article>
           </div>
         </section>
 
@@ -398,8 +511,8 @@
             <article class="testimonial-card reveal">
               <strong>Sofia T.</strong>
               <p>
-                “Me gusto que la pagina ya te dice rapido que venden y como
-                pedir. Se entiende facil.”
+                “Me gusto que ahora hasta el mayoreo tiene folio y se ve mucho
+                mas formal para hacer pedidos.”
               </p>
             </article>
           </div>

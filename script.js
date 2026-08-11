@@ -1,6 +1,9 @@
 const filters = document.querySelectorAll(".filter");
 const productCards = document.querySelectorAll(".product-card");
 const revealItems = document.querySelectorAll(".reveal");
+const wholesaleForm = document.querySelector("#wholesale-form");
+const folioCode = document.querySelector("#folio-code");
+const folioSummary = document.querySelector("#folio-summary");
 
 filters.forEach((filterButton) => {
   filterButton.addEventListener("click", () => {
@@ -37,3 +40,26 @@ const revealObserver = new IntersectionObserver(
 revealItems.forEach((item) => {
   revealObserver.observe(item);
 });
+
+if (wholesaleForm && folioCode && folioSummary) {
+  wholesaleForm.addEventListener("submit", (event) => {
+    event.preventDefault();
+
+    const formData = new FormData(wholesaleForm);
+    const name = String(formData.get("name") || "").trim();
+    const phone = String(formData.get("phone") || "").trim();
+    const type = String(formData.get("type") || "").trim();
+    const quantity = String(formData.get("quantity") || "").trim();
+    const notes = String(formData.get("notes") || "").trim();
+
+    const now = new Date();
+    const dateToken = `${now.getFullYear()}${String(now.getMonth() + 1).padStart(2, "0")}${String(now.getDate()).padStart(2, "0")}`;
+    const randomToken = Math.floor(100 + Math.random() * 900);
+    const folio = `MAY-${dateToken}-${randomToken}`;
+
+    folioCode.textContent = folio;
+    folioSummary.textContent =
+      `${name || "Prospecto"} solicito ${quantity || "0"} piezas de ${type || "producto"} ` +
+      `con telefono ${phone || "sin telefono"}${notes ? `. Nota: ${notes}` : "."}`;
+  });
+}
