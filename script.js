@@ -1,11 +1,109 @@
 const filters = document.querySelectorAll(".filter");
 const productCards = document.querySelectorAll(".product-card");
 const productCardToggles = document.querySelectorAll(".product-card__toggle");
+const productCardPreviews = document.querySelectorAll(".product-card__preview");
 const revealItems = document.querySelectorAll(".reveal");
 const wholesaleForm = document.querySelector("#wholesale-form");
 const folioCode = document.querySelector("#folio-code");
 const folioSummary = document.querySelector("#folio-summary");
 const folioWhatsapp = document.querySelector("#folio-whatsapp");
+const closeOpenProductCards = (exceptionCard = null) => {
+  productCards.forEach((card) => {
+    if (card !== exceptionCard) {
+      card.classList.remove("is-open");
+    }
+  });
+};
+
+const setupPreviewCarousel = (preview) => {
+  const previewImages = Array.from(preview.querySelectorAll("img"));
+
+  if (previewImages.length <= 1) {
+    return;
+  }
+
+  const shell = document.createElement("div");
+  shell.className = "product-card__preview-shell";
+
+  const prevButton = document.createElement("button");
+  prevButton.className = "product-card__carousel-button";
+  prevButton.type = "button";
+  prevButton.setAttribute("aria-label", "Imagen anterior");
+  prevButton.textContent = "<";
+
+  const nextButton = document.createElement("button");
+  nextButton.className = "product-card__carousel-button";
+  nextButton.type = "button";
+  nextButton.setAttribute("aria-label", "Imagen siguiente");
+  nextButton.textContent = ">";
+
+  const viewport = document.createElement("div");
+  viewport.className = "product-card__preview-viewport";
+
+  const track = document.createElement("div");
+  track.className = "product-card__preview-track";
+
+  previewImages.forEach((image) => {
+    track.appendChild(image);
+  });
+
+  viewport.appendChild(track);
+  shell.append(prevButton, viewport, nextButton);
+  preview.appendChild(shell);
+
+  const dots = document.createElement("div");
+  dots.className = "product-card__preview-dots";
+
+  let currentIndex = 0;
+
+  const dotButtons = previewImages.map((_, index) => {
+    const dot = document.createElement("button");
+    dot.className = "product-card__preview-dot";
+    dot.type = "button";
+    dot.setAttribute("aria-label", `Ir a imagen ${index + 1}`);
+    dot.addEventListener("click", (event) => {
+      event.preventDefault();
+      currentIndex = index;
+      updateCarousel();
+    });
+    dots.appendChild(dot);
+    return dot;
+  });
+
+  preview.appendChild(dots);
+
+  const updateCarousel = () => {
+    track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    prevButton.disabled = currentIndex === 0;
+    nextButton.disabled = currentIndex === previewImages.length - 1;
+
+    dotButtons.forEach((dotButton, index) => {
+      dotButton.classList.toggle("is-active", index === currentIndex);
+    });
+  };
+
+  prevButton.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    if (currentIndex > 0) {
+      currentIndex -= 1;
+      updateCarousel();
+    }
+  });
+
+  nextButton.addEventListener("click", (event) => {
+    event.preventDefault();
+
+    if (currentIndex < previewImages.length - 1) {
+      currentIndex += 1;
+      updateCarousel();
+    }
+  });
+
+  updateCarousel();
+};
+
+productCardPreviews.forEach(setupPreviewCarousel);
 
 filters.forEach((filterButton) => {
   filterButton.addEventListener("click", () => {
@@ -13,6 +111,7 @@ filters.forEach((filterButton) => {
 
     filters.forEach((button) => button.classList.remove("is-active"));
     filterButton.classList.add("is-active");
+    closeOpenProductCards();
 
     productCards.forEach((card) => {
       const matches =
@@ -36,12 +135,7 @@ productCardToggles.forEach((toggleButton) => {
     }
 
     const willOpen = !card.classList.contains("is-open");
-
-    productCards.forEach((otherCard) => {
-      if (otherCard !== card) {
-        otherCard.classList.remove("is-open");
-      }
-    });
+    closeOpenProductCards(card);
 
     card.classList.toggle("is-open", willOpen);
   });
@@ -55,9 +149,23 @@ productCards.forEach((card) => {
       }
 
       event.preventDefault();
-      card.classList.toggle("is-open");
+      const willOpen = !card.classList.contains("is-open");
+      closeOpenProductCards(card);
+      card.classList.toggle("is-open", willOpen);
     }
   });
+});
+
+document.addEventListener("click", (event) => {
+  if (!event.target.closest(".product-card")) {
+    closeOpenProductCards();
+  }
+});
+
+document.addEventListener("keydown", (event) => {
+  if (event.key === "Escape") {
+    closeOpenProductCards();
+  }
 });
 
 const revealObserver = new IntersectionObserver(
