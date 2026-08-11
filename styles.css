@@ -536,7 +536,11 @@ a {
 .category-card--image .category-card__content {
   position: relative;
   inset: auto;
-  padding: 18px 20px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  min-height: 72px;
+  padding: 14px 20px 20px;
 }
 
 .category-card__content {
