@@ -410,6 +410,7 @@ a {
 .catalog,
 .wholesale,
 .services,
+.parts,
 .testimonials,
 .contact {
   padding-top: 74px;
@@ -898,6 +899,51 @@ a {
   grid-template-columns: 1fr 0.95fr;
 }
 
+.parts__placeholder {
+  display: grid;
+  gap: 18px;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at right, rgba(184, 255, 21, 0.1), transparent 24%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.03), rgba(255, 255, 255, 0.01));
+  box-shadow: var(--shadow);
+}
+
+.parts__badge {
+  display: inline-flex;
+  width: fit-content;
+  padding: 8px 14px;
+  border-radius: 999px;
+  background: rgba(184, 255, 21, 0.14);
+  color: var(--accent);
+  font-size: 0.82rem;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+}
+
+.parts__placeholder h3 {
+  margin: 0;
+  font-family: "Archivo Black", sans-serif;
+  font-size: clamp(1.8rem, 3vw, 2.6rem);
+  text-transform: uppercase;
+}
+
+.parts__placeholder p,
+.parts__list li {
+  color: var(--muted);
+}
+
+.parts__list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 18px;
+  padding-left: 18px;
+  margin: 0;
+}
+
 .services__list {
   display: grid;
   gap: 18px;
@@ -1127,6 +1173,7 @@ a {
   .category-grid,
   .product-grid,
   .visual-strip,
+  .parts__list,
   .testimonial-grid,
   .contact {
     grid-template-columns: 1fr;
