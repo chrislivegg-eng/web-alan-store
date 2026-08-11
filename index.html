@@ -1,0 +1,283 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Wero Repara MTY | Fundas, Micas y Reparacion</title>
+    <meta
+      name="description"
+      content="Tienda virtual de fundas, micas de hidrogel y reparacion de celulares en Monterrey."
+    />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Barlow:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <div class="site-shell">
+      <header class="topbar">
+        <a class="brand" href="#inicio">
+          <span class="brand__badge">MTY</span>
+          <div>
+            <strong>Wero Repara</strong>
+            <span>Fundas, micas y celulares</span>
+          </div>
+        </a>
+
+        <nav class="nav">
+          <a href="#catalogo">Catalogo</a>
+          <a href="#servicios">Servicios</a>
+          <a href="#promos">Promos</a>
+          <a href="#contacto">Contacto</a>
+        </nav>
+
+        <a
+          class="button button--ghost"
+          href="https://wa.me/528100000000?text=Hola%2C%20quiero%20informacion%20sobre%20sus%20productos"
+          target="_blank"
+          rel="noreferrer"
+        >
+          Pedir por WhatsApp
+        </a>
+      </header>
+
+      <main id="inicio">
+        <section class="hero">
+          <div class="hero__copy reveal">
+            <p class="eyebrow">Monterrey, Nuevo Leon</p>
+            <h1>Proteccion, estilo y reparacion para tu cel</h1>
+            <p class="hero__text">
+              Venta de fundas con MagSafe, micas de hidrogel y servicio rapido
+              de reparacion para iPhone y Android.
+            </p>
+
+            <div class="hero__actions">
+              <a class="button" href="#catalogo">Ver productos</a>
+              <a class="button button--secondary" href="#servicios">
+                Ver servicios
+              </a>
+            </div>
+
+            <ul class="hero__stats">
+              <li><strong>Entrega rapida</strong><span>En MTYNL</span></li>
+              <li><strong>Proteccion premium</strong><span>Con estilo</span></li>
+              <li><strong>Ajuste perfecto</strong><span>Para tu modelo</span></li>
+            </ul>
+          </div>
+
+          <div class="hero__visual reveal">
+            <article class="showcase-card floating-card">
+              <img src="./assets/fundas.jpeg" alt="Promocion de fundas de diseno" />
+              <div class="showcase-card__content">
+                <span class="tag">Top ventas</span>
+                <h2>Fundas de diseno</h2>
+                <p>Silicon sencilla, de 3 piezas y compatibles con MagSafe.</p>
+              </div>
+            </article>
+
+            <article class="showcase-card showcase-card--offset floating-card floating-card--delayed">
+              <img
+                src="./assets/reparacion.jpeg"
+                alt="Promocion de compra y venta de celulares"
+              />
+              <div class="showcase-card__content">
+                <span class="tag">Servicio express</span>
+                <h2>Reparacion y compra</h2>
+                <p>Pantallas, equipos estrellados, bloqueados y mas.</p>
+              </div>
+            </article>
+          </div>
+        </section>
+
+        <section class="benefits reveal-group">
+          <div class="benefit reveal">
+            <span>01</span>
+            <strong>Micas de hidrogel</strong>
+            <p>Opciones de cristal, ceramica y ajuste segun tu equipo.</p>
+          </div>
+          <div class="benefit reveal">
+            <span>02</span>
+            <strong>Compra y venta</strong>
+            <p>Recibimos celulares y tambien manejamos equipos disponibles.</p>
+          </div>
+          <div class="benefit reveal">
+            <span>03</span>
+            <strong>Atencion confiable</strong>
+            <p>Respuesta directa por WhatsApp para cotizar rapido.</p>
+          </div>
+        </section>
+
+        <section class="catalog" id="catalogo">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Catalogo principal</p>
+            <h2>Lo que mas te piden</h2>
+            <div class="filters" role="tablist" aria-label="Filtros de productos">
+              <button class="filter is-active" data-filter="todos">Todos</button>
+              <button class="filter" data-filter="fundas">Fundas</button>
+              <button class="filter" data-filter="micas">Micas</button>
+              <button class="filter" data-filter="equipos">Equipos</button>
+            </div>
+          </div>
+
+          <div class="product-grid">
+            <article class="product-card reveal" data-category="fundas">
+              <div class="product-card__glow"></div>
+              <h3>Funda MagSafe</h3>
+              <p>Silicon suave al tacto con proteccion reforzada.</p>
+              <strong>$299 MXN</strong>
+              <a
+                href="https://wa.me/528100000000?text=Hola%2C%20quiero%20la%20Funda%20MagSafe"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Comprar ahora
+              </a>
+            </article>
+
+            <article class="product-card reveal" data-category="fundas">
+              <div class="product-card__glow"></div>
+              <h3>Funda 3 piezas</h3>
+              <p>Mayor proteccion en esquinas y camara para uso diario.</p>
+              <strong>$349 MXN</strong>
+              <a
+                href="https://wa.me/528100000000?text=Hola%2C%20quiero%20la%20Funda%203%20piezas"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Comprar ahora
+              </a>
+            </article>
+
+            <article class="product-card reveal" data-category="micas">
+              <div class="product-card__glow"></div>
+              <h3>Mica hidrogel cristal</h3>
+              <p>Acabado limpio y cobertura precisa para tu pantalla.</p>
+              <strong>$180 MXN</strong>
+              <a
+                href="https://wa.me/528100000000?text=Hola%2C%20quiero%20la%20Mica%20Hidrogel%20Cristal"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Comprar ahora
+              </a>
+            </article>
+
+            <article class="product-card reveal" data-category="micas">
+              <div class="product-card__glow"></div>
+              <h3>Mica hidrogel ceramica</h3>
+              <p>Mas resistencia, tacto suave y excelente visibilidad.</p>
+              <strong>$220 MXN</strong>
+              <a
+                href="https://wa.me/528100000000?text=Hola%2C%20quiero%20la%20Mica%20Hidrogel%20Ceramica"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Comprar ahora
+              </a>
+            </article>
+
+            <article class="product-card reveal" data-category="equipos">
+              <div class="product-card__glow"></div>
+              <h3>iPhone seminuevo</h3>
+              <p>Equipos revisados, liberados y listos para entrega.</p>
+              <strong>Desde $5,999 MXN</strong>
+              <a
+                href="https://wa.me/528100000000?text=Hola%2C%20quiero%20info%20de%20los%20iPhone%20seminuevos"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Cotizar equipo
+              </a>
+            </article>
+
+            <article class="product-card reveal" data-category="equipos">
+              <div class="product-card__glow"></div>
+              <h3>Compro tu celular</h3>
+              <p>Recibimos estrellados, bloqueados o usados en buen estado.</p>
+              <strong>Valuacion por WhatsApp</strong>
+              <a
+                href="https://wa.me/528100000000?text=Hola%2C%20quiero%20vender%20mi%20celular"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Enviar fotos
+              </a>
+            </article>
+          </div>
+        </section>
+
+        <section class="services" id="servicios">
+          <div class="section-heading reveal">
+            <p class="eyebrow">Servicios</p>
+            <h2>Tambien reparamos y cotizamos</h2>
+          </div>
+
+          <div class="services__layout">
+            <div class="services__list">
+              <article class="reveal">
+                <h3>Cambio de pantalla</h3>
+                <p>Revision rapida con opciones para distintos presupuestos.</p>
+              </article>
+              <article class="reveal">
+                <h3>Baterias y centros de carga</h3>
+                <p>Recupera rendimiento y carga segura para tu equipo.</p>
+              </article>
+              <article class="reveal">
+                <h3>Diagnostico y desbloqueo</h3>
+                <p>Te orientamos sobre equipos bloqueados o con fallas.</p>
+              </article>
+            </div>
+
+            <div class="promo-panel reveal" id="promos">
+              <p class="eyebrow">Promo activa</p>
+              <h3>Arma tu combo para estrenar tu cel protegido</h3>
+              <ul>
+                <li>Funda + mica con precio especial</li>
+                <li>Entrega rapida en Monterrey</li>
+                <li>Atencion por WhatsApp todo el dia</li>
+              </ul>
+              <a
+                class="button"
+                href="https://wa.me/528100000000?text=Hola%2C%20quiero%20la%20promo%20de%20funda%20y%20mica"
+                target="_blank"
+                rel="noreferrer"
+              >
+                Pedir promo
+              </a>
+            </div>
+          </div>
+        </section>
+
+        <section class="contact" id="contacto">
+          <div class="reveal">
+            <p class="eyebrow">Contacto</p>
+            <h2>Tu cel en buenas manos</h2>
+            <p>
+              Atendemos pedidos, reparaciones y cotizaciones directas desde
+              WhatsApp. Ideal para vender rapido y cerrar pedidos sin vueltas.
+            </p>
+          </div>
+
+          <div class="contact-card reveal">
+            <p><strong>Ubicacion:</strong> Monterrey, Nuevo Leon</p>
+            <p><strong>Horario:</strong> Lun a Sab - 10:00 am a 8:00 pm</p>
+            <p><strong>WhatsApp:</strong> +52 81 0000 0000</p>
+            <a
+              class="button"
+              href="https://wa.me/528100000000?text=Hola%2C%20quiero%20hacer%20un%20pedido"
+              target="_blank"
+              rel="noreferrer"
+            >
+              Abrir WhatsApp
+            </a>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>
