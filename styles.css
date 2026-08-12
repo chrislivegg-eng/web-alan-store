@@ -430,10 +430,6 @@ a {
   line-height: 1.02;
 }
 
-.showcase-card__keep-together {
-  white-space: nowrap;
-}
-
 .showcase-card p {
   margin: 0;
   max-width: 340px;
@@ -1277,6 +1273,10 @@ a {
   .showcase-card--hero,
   .showcase-card--compact {
     min-height: 320px;
+  }
+
+  .showcase-card--hero {
+    min-height: 380px;
   }
 
   .section-heading {
