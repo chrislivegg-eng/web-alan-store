@@ -430,6 +430,10 @@ a {
   line-height: 1.02;
 }
 
+.showcase-card__keep-together {
+  white-space: nowrap;
+}
+
 .showcase-card p {
   margin: 0;
   max-width: 340px;
