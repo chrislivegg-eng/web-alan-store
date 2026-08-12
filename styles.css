@@ -1280,12 +1280,18 @@ a {
   }
 
   .section-heading {
+    display: grid;
+    grid-template-columns: 1fr;
     align-items: start;
     gap: 18px;
   }
 
+  .section-heading > div:first-child {
+    width: 100%;
+  }
+
   .section-heading h2 {
-    max-width: 9ch;
+    max-width: 100%;
   }
 
   .filters {
