@@ -390,12 +390,24 @@ a {
   z-index: 1;
 }
 
+.showcase-card--compact .showcase-card__content {
+  inset: 16px auto auto 16px;
+}
+
 .showcase-card--hero {
   min-height: 720px;
 }
 
 .showcase-card--compact {
   min-height: 348px;
+}
+
+.showcase-card--compact img {
+  object-position: center;
+}
+
+.showcase-card--compact::after {
+  background: linear-gradient(180deg, rgba(0, 0, 0, 0.12) 0%, rgba(0, 0, 0, 0.3) 100%);
 }
 
 .tag,
@@ -1247,6 +1259,10 @@ a {
 
   .showcase-card__content {
     inset-inline: 18px;
+  }
+
+  .showcase-card--compact .showcase-card__content {
+    inset: 14px auto auto 14px;
   }
 
   .hero-showroom,
